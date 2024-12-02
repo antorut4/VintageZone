@@ -8,21 +8,21 @@ const PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Servire il file HTML
+// Endpoint per gestire il file HTML
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-// Gestire la richiesta POST
+// Endpoint per ricevere i dati del form
 app.post('/submit', (req, res) => {
     const { name, email, message } = req.body;
-    console.log('Dati ricevuti dal form:', { name, email, message });
+    console.log('Dati ricevuti:', { name, email, message });
 
-    // Invia una risposta al client
-    res.send(`<h1>Grazie, ${name}!</h1><p>Abbiamo ricevuto il tuo messaggio.</p>`);
+    // Risposta al client
+    res.send(`Grazie ${name}, il tuo messaggio è stato ricevuto!`);
 });
 
-// Avvia il server
+// Avvio del server
 app.listen(PORT, () => {
     console.log(`Server in ascolto su http://localhost:${PORT}`);
 });
