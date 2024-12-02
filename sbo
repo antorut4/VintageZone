@@ -17,7 +17,7 @@
         <label for="message">Messaggio:</label>
         <textarea id="message" name="message" rows="4" required></textarea>
         <br><br>
-        <button type="submit">Invia</button>
+        <button type="submit">Invia Il CAZZO</button>
     </form>
 </body>
 </html>
