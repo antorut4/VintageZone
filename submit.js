@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
 // Middleware per gestire i dati del form
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use(cors());
 
 // Endpoint per gestire il file HTML
 app.get('/', (req, res) => {
